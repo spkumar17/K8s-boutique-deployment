@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - Emailservice-NP.yaml
+  - Redis-NP.yaml
+  - Deny-all-NP.yaml
+  - Frontendservice-NP.yaml
+  - Shippingservice-NP.yaml
+  - Adservice-NP.yaml
+  - Checkoutservice-NP.yaml
+  - ProductCatalogy-NP.yaml
+  - Recommendationservice-NP.yaml
+  - Cartservice-NP.yaml
+  - Currencyservice-NP.yaml
+  - Paymentservice-NP.yaml
+  - microservices-configmap.yaml
+  - StorageClass.yaml

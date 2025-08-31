@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Recommendationservice
+  labels:
+    app: Recommendationservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Recommendationservice
+  template:
+    metadata:
+      labels:
+        app: Recommendationservice
+    spec:
+      containers:
+      - name: Recommendationservice
+        image: prasannakumarsinganamalla431/recommendationservice:latest
+        ports:
+          - containerPort: 8080
+        readinessProbe:
+          grpc:
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        livenessProbe:
+          grpc:
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3              
+        env:
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: PRODUCT_CATALOG_SERVICE_ADDR
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - Recommendationservice
+              topologyKey: "kubernetes.io/hostname"        
+              

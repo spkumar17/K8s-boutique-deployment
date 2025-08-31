@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Adservice
+  labels:
+    app: Adservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Adservice
+  template:
+    metadata:
+      labels:
+        app: Adservice
+    spec:
+      containers:
+      - name: Adservice
+        image: prasannakumarsinganamalla431/adservice:latest
+        ports:
+          - containerPort: 9555
+        readinessProbe:
+          grpc:
+            port: 9555
+          initialDelaySeconds: 10   # wait before first check
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        livenessProbe:
+          grpc:
+            port: 9555
+          initialDelaySeconds: 20  # After the container starts, Kubernetes waits 10 seconds before running the first probe. 
+          periodSeconds: 10 # How often (in seconds) Kubernetes will run the probe. 
+          timeoutSeconds: 2 # How long Kubernetes waits for a response before considering the probe failed. 
+          failureThreshold: 3 # How many consecutive failures before Kubernetes considers the container unhealthy (for liveness) or not ready (for readiness).       

@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: shippingservice-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: shippingservice
+  policyTypes:
+    - Ingress    
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: Frontendservice
+        - podSelector:
+            matchLabels:
+              app: Checkoutservice
+      ports:
+        - protocol: TCP
+          port: 50051
+  

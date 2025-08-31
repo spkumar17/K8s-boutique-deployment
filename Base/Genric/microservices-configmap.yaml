@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: microservices-config
+data:
+  AD_SERVICE_HOST: "Adservice:9555"
+  CURRENCY_SERVICE_ADDR: "Currencyservice:7000"
+  CART_SERVICE_ADDR: "Cartservice:7070"
+  CHECKOUT_SERVICE_ADD: "Checkoutservice:5050"
+  EMAIL_SERVICE_ADDR: "Emailservice:8081"
+  FRONTEND_SERVICE_ADDR: "Frontendservice:8080"
+  PRODUCT_CATALOG_SERVICE_ADDR: "Productcatalogservice:3550"
+  PAYMENT_SERVICE_ADDR: "Paymentservice:50051"
+  RECOMMENDATION_SERVICE_ADDR: "Recommendationservice:8082"
+  SHIPPING_SERVICE_ADDR: "Shippingservice:50052"
+  SHOPPING_ASSISTANT_SERVICE_ADDR: "shoppingassistantservice:80"
+  REDIS_ADDR: "Redis:6379"
+  
+  
+  

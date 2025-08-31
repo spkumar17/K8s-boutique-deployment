@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Frontendservice
+  labels:
+    app: Frontendservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Frontendservice
+  template:
+    metadata:
+      labels:
+        app: Frontendservice    
+    spec:
+      containers:
+      - name: Frontendservice
+        image: prasannakumarsinganamalla431/frontend:latest
+        ports:
+          - containerPort: 8080
+        readinessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: "/_healthz"
+            port: 8080
+        livenessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: "/_healthz"
+            port: 8080
+        env:
+        - name: SHOPPING_ASSISTANT_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: SHOPPING_ASSISTANT_SERVICE_ADDR
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: PRODUCT_CATALOG_SERVICE_ADDR
+        - name: CURRENCY_SERVICE_ADDR
+          valueFrom: 
+            configMapKeyRef:
+              name: microservices-config
+              key: CURRENCY_SERVICE_ADDR
+        - name: CART_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: CART_SERVICE_ADDR
+        - name: RECOMMENDATION_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: RECOMMENDATION_SERVICE_ADDR
+        - name: CHECKOUT_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: CHECKOUT_SERVICE_ADDR
+        - name: SHIPPING_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: SHIPPING_SERVICE_ADDR
+        - name: AD_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: AD_SERVICE_ADDR
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - Frontendservice
+              topologyKey: "kubernetes.io/hostname"
+              

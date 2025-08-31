@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Productcatalogservice
+  labels:
+    app: Productcatalogservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Productcatalogservice
+  template:
+    metadata:
+      labels:
+        app: Productcatalogservice
+    spec:
+      containers:
+      - name: Productcatalogservice
+        image: prasannakumarsinganamalla431/productcatalogservice:latest
+        ports:
+          - containerPort: 3550
+        readinessProbe:
+          grpc:
+            port: 3550
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        livenessProbe:
+          grpc:
+            port: 3550
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3    
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - Productcatalogservice
+              topologyKey: "kubernetes.io/hostname"                    

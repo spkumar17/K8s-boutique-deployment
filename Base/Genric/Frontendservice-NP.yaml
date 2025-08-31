@@ -1,0 +1,79 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: Frontendservice-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: Frontendservice
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: Checkoutservice
+    - podSelector:
+        matchLabels:
+          app: Productcatalogservice
+    - podSelector:
+        matchLabels:
+          app: Recommendationservice
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: shoppingassistantservice
+    ports:
+    - protocol: TCP
+      port: 8080      
+  - to:
+    - podSelector:
+        matchLabels:
+          app: Adservice
+    ports:
+    - protocol: TCP
+      port: 9555      
+  - to:
+    - podSelector:
+        matchLabels:
+          app: shippingservice
+    ports:
+    - protocol: TCP
+      port: 50051
+  - to:
+    - podSelector:
+        matchLabels:
+          app: Cartservice
+    ports:
+    - protocol: TCP
+      port: 7070
+  - to:
+    - podSelector:
+        matchLabels:
+          app: Currencyservice
+    ports:
+    - protocol: TCP
+      port: 7000
+  - to:
+    - podSelector:
+        matchLabels:
+          app: Productcatalogservice
+    ports:
+    - protocol: TCP
+      port: 3550
+  - to:
+    - podSelector:
+        matchLabels:
+          app: Checkoutservice
+    ports:
+    - protocol: TCP
+      port: 5050
+  - to:
+    - podSelector:
+        matchLabels:
+          app: Recommendationservice
+    ports:
+    - protocol: TCP
+      port: 8080

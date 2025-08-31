@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Cartservice
+  labels:
+    app: Cartservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Cartservice
+  template:
+    metadata:
+      labels:
+        app: Cartservice
+    spec:
+      containers:
+      - name: Cartservice
+        image: prasannakumarsinganamalla431/cartservice:latest
+        ports:
+          - containerPort: 7070
+        readinessProbe:
+          grpc:
+            port: 7070
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        livenessProbe:
+          grpc:
+            port: 7070
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3  
+        env:
+        - name: REDIS_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: REDIS_ADDR  
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - redis
+            topologyKey: "kubernetes.io/hostname"
+    

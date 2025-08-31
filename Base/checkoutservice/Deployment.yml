@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Checkoutservice
+  labels:
+    app: Checkoutservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Checkoutservice
+  template:
+    metadata:
+      labels:
+        app: Checkoutservice
+    spec:
+      containers:
+      - name: Checkoutservice
+        image: prasannakumarsinganamalla431/checkoutservice:latest
+        ports:
+          - containerPort: 5050
+        readinessProbe:
+          grpc:
+            port: 5050
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        livenessProbe:
+          grpc:
+            port: 5050
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3    
+        env:
+        - name: PAYMENT_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: PAYMENT_SERVICE_ADDR
+        - name: EMAIL_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: EMAIL_SERVICE_ADDR
+        - name: CURRENCY_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: CURRENCY_SERVICE_ADDR
+        - name: SHIPPING_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: SHIPPING_SERVICE_ADDR
+        - name: CART_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: CART_SERVICE_ADDR
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          valueFrom:
+            configMapKeyRef:
+              name: microservices-config
+              key: PRODUCT_CATALOG_SERVICE_ADDR
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - Checkoutservice
+              topologyKey: "kubernetes.io/hostname"        

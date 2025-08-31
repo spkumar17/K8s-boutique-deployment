@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: Productcatalogservice-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: Productcatalogservice
+  policyTypes:
+    - Ingress    
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: Frontendservice
+        - podSelector:
+            matchLabels:
+              app: Checkoutservice
+        - podSelector:
+            matchLabels:
+              app: Recommendationservice      
+      ports:
+        - protocol: TCP
+          port: 3550
+          
+         
+  
