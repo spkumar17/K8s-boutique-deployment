@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: microservices-config
 data:
-  AD_SERVICE_HOST: "adservice:9555"
+  AD_SERVICE_ADDR: "adservice:9555"
   CURRENCY_SERVICE_ADDR: "currencyservice:7000"
   CART_SERVICE_ADDR: "cartservice:7070"
   CHECKOUT_SERVICE_ADDR: "checkoutservice:5050"
