@@ -14,9 +14,9 @@ resources:
   - ../../Base/checkoutservice
   - ../../Base/currencyservice
   - ../../Base/frontendservice
-  - ../../Base/Paymentservice
+  - ../../Base/paymentservice
   - ../../Base/recommendationservice
-  - ../../Base/Shippingservice
+  - ../../Base/shippingservice
   - serviceaccount.yaml
   - ingress.yaml
   - HPA.yaml
