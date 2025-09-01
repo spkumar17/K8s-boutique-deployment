@@ -11,11 +11,11 @@ resources:
   - ../../Base/Genric
   - ../../Base/Productcatalogservice
   - ../../Base/Redis
-  - ../../Base/Checkoutservice
+  - ../../Base/checkoutservice
   - ../../Base/Currencyservice
   - ../../Base/Frontendservice
   - ../../Base/Paymentservice
-  - ../../Base/Recommendationservice
+  - ../../Base/recommendationservice
   - ../../Base/Shippingservice
   - serviceaccount.yaml
   - ingress.yaml
