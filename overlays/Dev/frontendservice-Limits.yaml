@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Frontendservice
+  namespace: development
+  labels:
+    app: dev-Frontendservice
+spec:
+  template:
+    spec:
+      containers:
+      - name: Frontendservice
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
