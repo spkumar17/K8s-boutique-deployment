@@ -5,9 +5,23 @@ namePrefix: prod-
 namespace: production
 
 resources:
-  - ../../Base
+  - ../../Base/Adservice
+  - ../../Base/Cartservice
+  - ../../Base/Emailservice
+  - ../../Base/Genric
+  - ../../Base/Productcatalogservice
+  - ../../Base/Redis
+  - ../../Base/Checkoutservice
+  - ../../Base/Currencyservice
+  - ../../Base/Frontendservice
+  - ../../Base/Paymentservice
+  - ../../Base/Recommendationservice
+  - ../../Base/Shippingservice
+  - serviceaccount.yaml
+  - ingress.yaml
   - serviceaccount.yaml
 
 patchesStrategicMerge:
   - Patch-resourcelimit.yaml
   - Patch-Redis.yaml  
+

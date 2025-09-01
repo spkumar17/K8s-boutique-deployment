@@ -5,10 +5,29 @@ namespace: development
 
 namePrefix: dev-
 resources:
-  - ../../Base
+  - ../../Base/Adservice
+  - ../../Base/Cartservice
+  - ../../Base/Emailservice
+  - ../../Base/Genric
+  - ../../Base/Productcatalogservice
+  - ../../Base/Redis
+  - ../../Base/Checkoutservice
+  - ../../Base/Currencyservice
+  - ../../Base/Frontendservice
+  - ../../Base/Paymentservice
+  - ../../Base/Recommendationservice
+  - ../../Base/Shippingservice
   - serviceaccount.yaml
   - ingress.yaml
+  - HPA.yaml
+  - namespace.yaml
 
-patchesStrategicMerge:
-  - Patch-resourcelimit.yaml
-  - Patch-Redis.yaml
+
+
+patches:
+  - path: Patch-Redis.yaml
+    target:
+      kind: StatefulSet
+      name: redis
+  - path: Patch-resourcelimit.yaml
+    
