@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cartservice
+  name: dev-cartservice
   namespace: development
   labels:
-    app: dev-cartservice
+    app: cartservice
 spec:
   template:
     spec:
