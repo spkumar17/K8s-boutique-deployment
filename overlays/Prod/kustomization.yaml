@@ -17,9 +17,9 @@ resources:
   - ../../Base/Paymentservice
   - ../../Base/Recommendationservice
   - ../../Base/Shippingservice
-  - serviceaccount.yaml
+  - Serviceaccount.yaml
   - ingress.yaml
-  - serviceaccount.yaml
+  - Namspace.yaml
 
 patchesStrategicMerge:
   - Patch-resourcelimit.yaml

@@ -17,10 +17,10 @@ resources:
   - ../../Base/paymentservice
   - ../../Base/recommendationservice
   - ../../Base/shippingservice
-  - serviceaccount.yaml
+  - Serviceaccount.yaml
   - ingress.yaml
   - HPA.yaml
-  - namespace.yaml
+  - Namespace.yaml
 
 
 
