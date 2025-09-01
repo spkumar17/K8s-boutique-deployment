@@ -12,7 +12,7 @@ resources:
   - ../../Base/Productcatalogservice
   - ../../Base/Redis
   - ../../Base/checkoutservice
-  - ../../Base/Currencyservice
+  - ../../Base/currencyservice
   - ../../Base/Frontendservice
   - ../../Base/Paymentservice
   - ../../Base/recommendationservice
