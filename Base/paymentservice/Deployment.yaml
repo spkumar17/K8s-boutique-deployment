@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: Paymentservice
   labels:
-    app: Paymentservice
+    app: paymentservice
 spec:
   replicas: 1
   selector:
