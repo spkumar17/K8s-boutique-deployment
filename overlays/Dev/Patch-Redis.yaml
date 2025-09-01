@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: redis
-  namespace: development
 spec:
+  serviceName: redis
   volumeClaimTemplates:
     - metadata:
         name: redis-storage
