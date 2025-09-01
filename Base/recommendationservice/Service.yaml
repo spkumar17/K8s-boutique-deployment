@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: Recommendationservice
+  labels:
+    app: Recommendationservice
+spec:
+  type: ClusterIP
+  selector:
+    app: Recommendationservice
+  ports:
+  - name: grpc
+    port: 8082        # Service port (used inside cluster)
+    targetPort: 8080  # Pod's containerPort
