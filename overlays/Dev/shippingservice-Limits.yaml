@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shippingservice
+  name: dev-shippingservice
   namespace: development
   labels:
-    app: dev-shippingservice
+    app: shippingservice
 spec:
   template:
     spec:

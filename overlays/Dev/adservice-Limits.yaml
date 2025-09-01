@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adservice
+  name: dev-adservice
   namespace: development
   labels:
-    app: dev-adservice
+    app: adservice
 spec:
   template:
     spec:
@@ -15,5 +15,5 @@ spec:
             memory: "256Mi"
             cpu: "250m"
           limits:
-            memory: "512Mi"
+            memory: "555Mi"
             cpu: "500m"
