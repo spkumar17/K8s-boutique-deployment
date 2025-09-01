@@ -31,5 +31,58 @@ patches:
       name: redis
       namespace: development
       
-  - path: Patch-resourcelimit.yaml
+  - path: adservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Adservice
+
+  - path: cartservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Cartservice
+
+  - path: checkoutservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Checkoutservice
+
+  - path: currencyservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Currencyservice
+
+  - path: emailservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Emailservice
+
+  - path: frontendservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Frontendservice
+
+  - path: paymentservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Paymentservice
+
+  - path: productcatalogservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Productcatalogservice
+
+  - path: recommendationservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: Recommendationservice
+
+  - path: redis-statefulset.yaml
+    target:
+      kind: StatefulSet
+      name: redis
+
+  - path: shippingservice-Limits.yaml
+    target:
+      kind: Deployment
+      name: shippingservice
     
