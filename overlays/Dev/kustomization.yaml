@@ -29,5 +29,8 @@ patches:
     target:
       kind: StatefulSet
       name: redis
+      namespace: development
   - path: Patch-resourcelimit.yaml
+    target:
+      namespace: development
     
