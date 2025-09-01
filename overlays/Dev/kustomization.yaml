@@ -29,7 +29,6 @@ patches:
     target:
       kind: StatefulSet
       name: redis
-      namespace: development
       
   - path: adservice-Limits.yaml
     target:

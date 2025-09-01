@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: redis
+  namespace: development
 spec:
   serviceName: redis
   replicas: 1
@@ -31,11 +32,21 @@ spec:
             mountPath: /data/redis
       affinity: 
         nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-          - matchExpressions:
-            - key: disk
-              operator: In
-              values:
-              - ssd
-    
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - nodeSelectorTerms:
+            - matchExpressions:
+              - key: disk
+                operator: In
+                values:
+                - ssd
+
+  volumeClaimTemplates:
+    - metadata:
+        name: redis-storage
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: ebs-sc
+        resources:
+          requests:
+            storage: 1Gi
