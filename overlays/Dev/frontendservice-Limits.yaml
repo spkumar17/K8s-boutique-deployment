@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontendservice
+  name: dev-frontendservice
   namespace: development
   labels:
-    app: dev-frontendservice
+    app: frontendservice
 spec:
   template:
     spec:

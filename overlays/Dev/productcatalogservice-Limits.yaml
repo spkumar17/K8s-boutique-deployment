@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productcatalogservice
+  name: dev-productcatalogservice
   namespace: development
   labels:
-    app: dev-productcatalogservice
+    app: productcatalogservice
 spec:
   template:
     spec:

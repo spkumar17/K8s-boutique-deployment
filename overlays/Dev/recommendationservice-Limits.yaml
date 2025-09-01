@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: recommendationservice
+  name: dev-recommendationservice
   namespace: development
   labels:
-    app: dev-recommendationservice
+    app: recommendationservice
 spec:
   template:
     spec:

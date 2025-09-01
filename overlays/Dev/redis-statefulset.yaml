@@ -1,12 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-service
+  name: dev-redis
   namespace: development
-  labels:
-    app: dev-redis
 spec:
+  selector:
+    matchLabels:
+      app: redis
   template:
+    metadata:
+      labels:
+        app: redis
     spec:
       containers:
       - name: redis
@@ -16,4 +20,4 @@ spec:
             cpu: "250m"
           limits:
             memory: "512Mi"
-            cpu: "500m"
+            cpu: "5000m"

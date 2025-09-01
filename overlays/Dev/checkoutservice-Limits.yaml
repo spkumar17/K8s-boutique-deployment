@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: checkoutservice
+  name: dev-checkoutservice
   namespace: development
   labels:
-    app: dev-checkoutservice
+    app: checkoutservice
 spec:
   template:
     spec:

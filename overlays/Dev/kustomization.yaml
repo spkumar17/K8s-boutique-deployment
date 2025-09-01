@@ -34,47 +34,47 @@ patches:
   - path: adservice-Limits.yaml
     target:
       kind: Deployment
-      name: Adservice
+      name: adservice
 
   - path: cartservice-Limits.yaml
     target:
       kind: Deployment
-      name: Cartservice
+      name: cartservice
 
   - path: checkoutservice-Limits.yaml
     target:
       kind: Deployment
-      name: Checkoutservice
+      name: checkoutservice
 
   - path: currencyservice-Limits.yaml
     target:
       kind: Deployment
-      name: Currencyservice
+      name: currencyservice
 
   - path: emailservice-Limits.yaml
     target:
       kind: Deployment
-      name: Emailservice
+      name: emailservice
 
   - path: frontendservice-Limits.yaml
     target:
       kind: Deployment
-      name: Frontendservice
+      name: frontendservice
 
   - path: paymentservice-Limits.yaml
     target:
       kind: Deployment
-      name: Paymentservice
+      name: paymentservice
 
   - path: productcatalogservice-Limits.yaml
     target:
       kind: Deployment
-      name: Productcatalogservice
+      name: productcatalogservice
 
   - path: recommendationservice-Limits.yaml
     target:
       kind: Deployment
-      name: Recommendationservice
+      name: recommendationservice
 
   - path: redis-statefulset.yaml
     target:
