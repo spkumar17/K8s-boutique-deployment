@@ -1,7 +1,7 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: myapp-pdb
+  name: frontendservice-pdb
 spec:
   minAvailable: 2
   selector:
