@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Paymentservice
+  name: paymentservice
   labels:
     app: paymentservice
 spec:
@@ -49,4 +49,4 @@ spec:
                   operator: In
                   values:
                   - paymentservice
-              topologyKey: "kubernetes.io/hostname"                      
+              topologyKey: "kubernetes.io/hostname"
