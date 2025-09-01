@@ -39,7 +39,6 @@ spec:
                 operator: In
                 values:
                 - ssd
-
   volumeClaimTemplates:
     - metadata:
         name: redis-storage
