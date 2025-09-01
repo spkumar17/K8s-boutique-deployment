@@ -10,7 +10,7 @@ resources:
   - Adservice-NP.yaml
   - Checkoutservice-NP.yaml
   - ProductCatalogy-NP.yaml
-  - Recommendationservice-NP.yaml
+  - Recommendation-NP.yaml
   - Cartservice-NP.yaml
   - Currencyservice-NP.yaml
   - Paymentservice-NP.yaml
