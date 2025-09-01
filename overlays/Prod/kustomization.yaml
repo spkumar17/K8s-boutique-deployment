@@ -22,6 +22,5 @@ resources:
   - Namspace.yaml
 
 patchesStrategicMerge:
-  - Patch-resourcelimit.yaml
   - Patch-Redis.yaml  
 

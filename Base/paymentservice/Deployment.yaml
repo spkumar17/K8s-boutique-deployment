@@ -8,14 +8,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Paymentservice
+      app: paymentservice
   template:
     metadata:
       labels:
-        app: Paymentservice
+        app: paymentservice
     spec:
       containers:
-      - name: Paymentservice
+      - name: paymentservice
         image: prasannakumarsinganamalla431/paymentservice:latest
         ports:
           - containerPort: 50051
@@ -48,5 +48,5 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - Paymentservice
+                  - paymentservice
               topologyKey: "kubernetes.io/hostname"                      

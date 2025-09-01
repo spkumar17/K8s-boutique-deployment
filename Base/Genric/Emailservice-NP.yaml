@@ -1,21 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: Emailservice-policy
+  name: emailservice-policy
 spec:
   podSelector:
     matchLabels:
-      app: Emailservice
+      app: emailservice
   policyTypes:
     - Ingress    
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              app: Frontendservice
+              app: frontendservice
         - podSelector:
             matchLabels:
-              app: Checkoutservice
+              app: checkoutservice
       ports:
         - protocol: TCP
           port: 8080

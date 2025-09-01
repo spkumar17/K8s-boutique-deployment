@@ -5,17 +5,17 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: Currencyservice
+      app: currencyservice
   policyTypes:
     - Ingress    
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              app: Frontendservice
+              app: frontendservice
         - podSelector:
             matchLabels:
-              app: Checkoutservice
+              app: checkoutservice
       ports:
         - protocol: TCP
           port: 7000

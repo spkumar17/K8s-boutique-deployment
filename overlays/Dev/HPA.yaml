@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: HPA-Frontendservice
+  name: hpa-frontendservice
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: Frontendservice
+    name: frontendservice
   minReplicas: 2
   maxReplicas: 10
   metrics:
@@ -31,12 +31,12 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: HPA-Checkoutservice
+  name: hpa-checkoutservice
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: Checkoutservice
+    name: checkoutservice
   minReplicas: 2
   maxReplicas: 10
   metrics:
@@ -61,12 +61,12 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: HPA-Productcatalogservice
+  name: hpa-productcatalogservice
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: Productcatalogservice
+    name: productcatalogservice
   minReplicas: 2
   maxReplicas: 10
   metrics:

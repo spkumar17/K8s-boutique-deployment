@@ -12,10 +12,10 @@ spec:
     - from:
         - podSelector:
             matchLabels:
-              app: Frontendservice
+              app: frontendservice
         - podSelector:
             matchLabels:
-              app: Checkoutservice
+              app: checkoutservice
       ports:
         - protocol: TCP
           port: 50051

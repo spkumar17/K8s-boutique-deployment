@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Currencyservice
+  name: currencyservice
   labels:
-    app: Currencyservice
+    app: currencyservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Currencyservice
+      app: currencyservice
   template:
     metadata:
       labels:
-        app: Currencyservice
+        app: currencyservice
     spec:
       containers:
-      - name: Currencyservice
+      - name: currencyservice
         image: prasannakumarsinganamalla431/currencyservice:latest
         ports:
           - containerPort: 7000

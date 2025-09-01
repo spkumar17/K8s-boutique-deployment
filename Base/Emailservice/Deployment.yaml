@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Emailservice
+  name: emailservice
   labels:
-    app: Emailservice
+    app: emailservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Emailservice
+      app: emailservice
   template:
     metadata:
       labels:
-        app: Emailservice
+        app: emailservice
     spec:
       containers:
-      - name: Emailservice
+      - name: emailservice
         image: prasannakumarsinganamalla431/emailservice:latest
         ports:
           - containerPort: 8080

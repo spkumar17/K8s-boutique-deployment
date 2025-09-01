@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Checkoutservice
+  name: checkoutservice
   labels:
-    app: Checkoutservice
+    app: checkoutservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Checkoutservice
+      app: checkoutservice
   template:
     metadata:
       labels:
-        app: Checkoutservice
+        app: checkoutservice
     spec:
       containers:
-      - name: Checkoutservice
+      - name: checkoutservice
         image: prasannakumarsinganamalla431/checkoutservice:latest
         ports:
           - containerPort: 5050

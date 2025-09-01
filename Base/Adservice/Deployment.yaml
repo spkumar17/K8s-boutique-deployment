@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Adservice
+  name: adservice
   labels:
-    app: Adservice
+    app: adservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Adservice
+      app: adservice
   template:
     metadata:
       labels:
-        app: Adservice
+        app: adservice
     spec:
       containers:
-      - name: Adservice
+      - name: adservice
         image: prasannakumarsinganamalla431/adservice:latest
         ports:
           - containerPort: 9555

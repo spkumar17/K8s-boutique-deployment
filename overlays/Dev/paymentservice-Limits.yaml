@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Paymentservice
+  name: paymentservice
   namespace: development
   labels:
-    app: dev-Paymentservice
+    app: dev-paymentservice
 spec:
   template:
     spec:
       containers:
-      - name: Paymentservice
+      - name: paymentservice
         resources:
           requests:
             memory: "256Mi"

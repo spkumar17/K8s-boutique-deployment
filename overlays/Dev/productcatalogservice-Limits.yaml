@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Productcatalogservice
+  name: productcatalogservice
   namespace: development
   labels:
-    app: dev-Productcatalogservice
+    app: dev-productcatalogservice
 spec:
   template:
     spec:
       containers:
-      - name: Productcatalogservice
+      - name: productcatalogservice
         resources:
           requests:
             memory: "256Mi"

@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Paymentservice
+  name: paymentservice
   labels:
-    app: Paymentservice
+    app: paymentservice
 spec:
   type: ClusterIP
   selector:
-    app: Paymentservice
+    app: paymentservice
   ports:
   - name: grpc
     port: 50051        # Service port (used inside cluster)

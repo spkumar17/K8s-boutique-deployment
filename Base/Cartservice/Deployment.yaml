@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Cartservice
+  name: cartservice
   labels:
-    app: Cartservice
+    app: cartservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Cartservice
+      app: cartservice
   template:
     metadata:
       labels:
-        app: Cartservice
+        app: cartservice
     spec:
       containers:
-      - name: Cartservice
+      - name: cartservice
         image: prasannakumarsinganamalla431/cartservice:latest
         ports:
           - containerPort: 7070

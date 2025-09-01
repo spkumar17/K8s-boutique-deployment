@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Adservice
+  name: adservice
   labels:
-    app: Adservice
+    app: adservice
 spec:
   type: ClusterIP
   selector:
-    app: Adservice
+    app: adservice
   ports:
   - name: grpc
     port: 9555        # Service port (used inside cluster)

@@ -16,7 +16,7 @@ spec:
           path: "/ProdFrontend"
           backend:         
             service:
-              name: prod-Frontendservice
+              name: prod-frontendservice
               port:
                 number: 8080  #  <-- This should match the targetPort of your Frontendservice 
               #This configuration ensures that requests to the path /prod on the external IP address of the Ingress Controller will be routed to the frontend-service-dev service, even though it is a ClusterIP service.spec/rules/*/http/paths/*/backend/service/name

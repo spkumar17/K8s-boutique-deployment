@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Productcatalogservice
+  name: productcatalogservice
   labels:
-    app: Productcatalogservice
+    app: productcatalogservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Productcatalogservice
+      app: productcatalogservice
   template:
     metadata:
       labels:
-        app: Productcatalogservice
+        app: productcatalogservice
     spec:
       containers:
-      - name: Productcatalogservice
+      - name: productcatalogservice
         image: prasannakumarsinganamalla431/productcatalogservice:latest
         ports:
           - containerPort: 3550
@@ -43,5 +43,5 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - Productcatalogservice
+                  - productcatalogservice
               topologyKey: "kubernetes.io/hostname"                    

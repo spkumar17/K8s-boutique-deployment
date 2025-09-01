@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: Paymentservice-policy
+  name: paymentservice-policy
 spec:
   podSelector:
     matchLabels:
-      app: Paymentservice
+      app: paymentservice
   policyTypes:
     - Ingress    
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              app: Checkoutservice
+              app: checkoutservice
       ports:
         - protocol: TCP
           port: 50051

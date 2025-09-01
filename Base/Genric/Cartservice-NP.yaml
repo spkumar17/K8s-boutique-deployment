@@ -5,7 +5,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: Cartservice
+      app: cartservice
   policyTypes:
   - Ingress
   - Egress
@@ -13,7 +13,7 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: Frontendservice
+          app: frontendservice
     ports:
     - protocol: TCP
       port: 7070

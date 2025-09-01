@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: Adservice-policy
+  name: adservice-policy
 spec:
   podSelector:
     matchLabels:
-      app: Adservice
+      app: adservice
   policyTypes:
   - Ingress
   ingress:
   - from:
     - podSelector:
         matchLabels:
-          app: Frontendservice
+          app: frontendservice
     ports:
     - protocol: TCP
       port: 9555

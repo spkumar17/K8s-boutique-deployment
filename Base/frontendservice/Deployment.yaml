@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Frontendservice
+  name: frontendservice
   labels:
-    app: Frontendservice
+    app: frontendservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Frontendservice
+      app: frontendservice
   template:
     metadata:
       labels:
         app: Frontendservice    
     spec:
       containers:
-      - name: Frontendservice
+      - name: frontendservice
         image: prasannakumarsinganamalla431/frontend:latest
         ports:
           - containerPort: 8080

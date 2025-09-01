@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Recommendationservice
+  name: recommendationservice
   namespace: development
   labels:
-    app: dev-Recommendationservice
+    app: dev-recommendationservice
 spec:
   template:
     spec:
       containers:
-      - name: Recommendationservice
+      - name: recommendationservice
         resources:
           requests:
             memory: "256Mi"

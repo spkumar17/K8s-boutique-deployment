@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Recommendationservice
+  name: recommendationservice
   labels:
-    app: Recommendationservice
+    app: recommendationservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Recommendationservice
+      app: recommendationservice
   template:
     metadata:
       labels:
-        app: Recommendationservice
+        app: recommendationservice
     spec:
       containers:
-      - name: Recommendationservice
+      - name: recommendationservice
         image: prasannakumarsinganamalla431/recommendationservice:latest
         ports:
           - containerPort: 8080
@@ -49,6 +49,6 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - Recommendationservice
+                  - recommendationservice
               topologyKey: "kubernetes.io/hostname"        
               
