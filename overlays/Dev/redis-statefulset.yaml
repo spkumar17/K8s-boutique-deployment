@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: SatefulSet
 metadata:
   name: dev-redis
   namespace: development
@@ -20,4 +20,4 @@ spec:
             cpu: "250m"
           limits:
             memory: "512Mi"
-            cpu: "5000m"
+            cpu: "502m"
