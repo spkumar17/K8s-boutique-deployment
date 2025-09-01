@@ -1,4 +1,4 @@
-apiVersion: hpa.autoscaling/v2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: HPA-Frontendservice
@@ -28,7 +28,7 @@ spec:
         periodSeconds: 60  
 
 ---
-apiVersion: hpa.autoscaling/v2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: HPA-Checkoutservice
@@ -58,7 +58,7 @@ spec:
         periodSeconds: 60  
 
 ---
-apiVersion: hpa.autoscaling/v2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: HPA-Productcatalogservice
