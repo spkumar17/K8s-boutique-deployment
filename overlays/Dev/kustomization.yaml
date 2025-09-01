@@ -13,7 +13,7 @@ resources:
   - ../../Base/Redis
   - ../../Base/checkoutservice
   - ../../Base/currencyservice
-  - ../../Base/Frontendservice
+  - ../../Base/frontendservice
   - ../../Base/Paymentservice
   - ../../Base/recommendationservice
   - ../../Base/Shippingservice
