@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: dev-redis
+  namespace: development
 spec:
   serviceName: redis
   volumeClaimTemplates:
@@ -10,7 +11,7 @@ spec:
       spec:
         accessModes:
           - ReadWriteOnce
-        storageClassName: "ebs-sc"  
+        storageClassName: ebs-sc  
         resources:
           requests:
             storage: 1Gi
