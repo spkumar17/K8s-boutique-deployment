@@ -25,11 +25,6 @@ resources:
 
 
 patches:
-  - path: Patch-Redis.yaml
-    target:
-      kind: StatefulSet
-      name: redis
-      
   - path: adservice-Limits.yaml
     target:
       kind: Deployment
