@@ -25,6 +25,15 @@ resources:
 
 
 patches:
+  - target:
+      kind: StatefulSet
+      name: redis
+      
+    patch: |-
+      - op: replace
+        path: /spec/volumeClaimTemplates/0/spec/resources/requests/storage
+        value: 5Gi
+
   - path: adservice-Limits.yaml
     target:
       kind: Deployment
