@@ -34,7 +34,7 @@ spec:
   tls:
   - hosts:
     - app.nextgendev.site
-    secretName: ingress-dev-tls-secret 
+    secretName: ingress-dev-tls-secret
   rules:
     - host: "app.nextgendev.site"  # replace with your ELB DNS
       http:
