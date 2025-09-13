@@ -33,10 +33,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - http://app.nextgendev.site
+    - app.nextgendev.site
     secretName: ingress-dev-tls-secret 
   rules:
-    - host: "http://app.nextgendev.site"   # replace with your ELB DNS
+    - host: "app.nextgendev.site"  # replace with your ELB DNS
       http:
         paths:
           - path: /adservice
