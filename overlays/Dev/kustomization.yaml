@@ -79,11 +79,6 @@ patches:
       kind: Deployment
       name: recommendationservice
 
-  - path: redis-statefulset.yaml
-    target:
-      kind: StatefulSet
-      name: redis
-
   - path: shippingservice-Limits.yaml
     target:
       kind: Deployment
