@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: SatefulSet
+kind: statefulset 
 metadata:
   name: dev-redis
   namespace: development
