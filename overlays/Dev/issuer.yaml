@@ -8,7 +8,7 @@ spec:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: kumarsinganamalla093@gmail.com
     privateKeySecretRef:
-      name: ingress-dev-tls-secret
+      name: letsencrypt-dev-account-key
     solvers:
     - http01:
         ingress:
