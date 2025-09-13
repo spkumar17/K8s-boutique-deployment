@@ -14,5 +14,4 @@ resources:
   - Cartservice-NP.yaml
   - Currencyservice-NP.yaml
   - Paymentservice-NP.yaml
-  - microservices-configmap.yaml
   - StorageClass.yaml

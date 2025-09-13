@@ -3,7 +3,6 @@ kind: Kustomization
 
 namespace: development
 
-namePrefix: dev-
 resources:
   - ../../Base/Adservice
   - ../../Base/Cartservice
@@ -21,6 +20,7 @@ resources:
   - ingress.yaml
   - HPA.yaml
   - Namespace.yaml
+  - microservices-configmap.yaml
 
 
 
