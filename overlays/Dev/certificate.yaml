@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: myapp-dev-tls
+  name: ingress-dev-tls
   namespace: development
 spec:
   secretName: ingress-dev-tls-secret
@@ -9,4 +9,4 @@ spec:
     name: letsencrypt-dev   # 🔑 Must match the Issuer in same namespace
     kind: Issuer
   dnsNames:
-  - http://app.nextgendev.site  
+  - app.nextgendev.site  
