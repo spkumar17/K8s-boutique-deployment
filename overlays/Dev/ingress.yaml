@@ -33,10 +33,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - a7d7d49f1581347a7bea52d7af36405b-1551666044.us-east-1.elb.amazonaws.com
+    - http://app.nextgendev.site
     secretName: ingress-dev-tls-secret 
   rules:
-    - host: "a7d7d49f1581347a7bea52d7af36405b-1551666044.us-east-1.elb.amazonaws.com"   # replace with your ELB DNS
+    - host: "http://app.nextgendev.site"   # replace with your ELB DNS
       http:
         paths:
           - path: /adservice
@@ -123,3 +123,4 @@ spec:
                 name: redis
                 port:
                   number: 6379
+
