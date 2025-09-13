@@ -28,8 +28,13 @@ metadata:
   namespace: development
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/issuer: "letsencrypt-dev"  
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - a7d7d49f1581347a7bea52d7af36405b-1551666044.us-east-1.elb.amazonaws.com
+    secretName: ingress-dev-tls-secret 
   rules:
     - host: "a7d7d49f1581347a7bea52d7af36405b-1551666044.us-east-1.elb.amazonaws.com"   # replace with your ELB DNS
       http:
