@@ -22,7 +22,6 @@ resources:
   - Namespace.yaml
   - microservices-configmap.yaml
   - issuer.yaml
-  - certificate.yaml
 
 
 
