@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - app.nextgendev.site
-    secretName: letsencrypt-dev-account-key
+    secretName: ingress-secret-tls
   rules:
     - host: "app.nextgendev.site"  # replace with your ELB DNS
       http:
