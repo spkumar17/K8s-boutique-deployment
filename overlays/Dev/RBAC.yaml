@@ -22,8 +22,8 @@ kind: ClusterRoleBinding
 metadata:
   name: kumar-read-access-binding
 subjects:
-- kind: User
-  name: "kumar"   # must match CN from CSR
+- kind: Group
+  name: "devteam"
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
@@ -56,8 +56,8 @@ metadata:
   name: dev-full-access-binding
   namespace: development
 subjects:
-- kind: User
-  name: "kumar"   # must match CN from CSR
+- kind: Group
+  name: "devteam"   # must match CN from CSR
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
