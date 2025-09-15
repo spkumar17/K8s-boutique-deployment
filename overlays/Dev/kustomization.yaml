@@ -22,6 +22,7 @@ resources:
   - Namespace.yaml
   - microservices-configmap.yaml
   - issuer.yaml
+  - RBAC.yaml
 
 
 
